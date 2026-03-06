@@ -51,4 +51,17 @@ class InteractionModel(SQLModel):
     learner_id: int
     item_id: int
     kind: str
-    timestamp: datetime
+    created_at: datetime
+
+    model_config = {
+        "from_attributes": True,
+        "json_schema_extra": {
+            "example": """{
+                "id": 1,
+                "learner_id": 1,
+                "item_id": 1,
+                "kind": "attempt",
+                "created_at": "2026-03-06T12:00:00Z"
+            }"""
+        }
+    }
